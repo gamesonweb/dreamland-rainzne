@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra Lumina - Bienvenue dans le Monde des Rêves</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@300;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0524 0%, #1a0b33 50%, #2a1659 100%);
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Quicksand', sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        .content {
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .logo {
+            margin-bottom: 2rem;
+            position: relative;
+            text-shadow: 0 0 10px rgba(151, 107, 255, 0.8);
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #a78bfa, #60a5fa, #e879f9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #c4b5fd;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #e0e7ff;
+            font-size: 1.1rem;
+        }
+        
+        .play-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #ffffff;
+            background: linear-gradient(45deg, #7e22ce, #6d28d9);
+            border-radius: 50px;
+            border: 2px solid #8b5cf6;
+            box-shadow: 0 0 15px #8b5cf6;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #8b5cf6;
+        }
+        
+        .play-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .play-btn:hover:before {
+            left: 100%;
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 15px rgba(168, 85, 247, 0.5); }
+            50% { text-shadow: 0 0 30px rgba(168, 85, 247, 0.8); }
+        }
+        
+        .cosmic-dust {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+            filter: blur(20px);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="cosmic-dust" style="top: 10%; left: 10%;"></div>
+    <div class="cosmic-dust" style="top: 70%; left: 80%;"></div>
+    <div class="cosmic-dust" style="top: 40%; left: 60%;"></div>
+    
+    <div class="content">
+        <div class="logo floating">
+            <h1>ASTRA LUMINA</h1>
+            <h2>Dream Explorer</h2>
+        </div>
+        
+        <p>Plongez dans un univers onirique où les rêves et la réalité s'entremêlent. Explorez des paysages célestes, résolvez des énigmes cosmiques et découvrez les secrets de l'Astra Lumina, l'essence mystique qui alimente le monde des songes.</p>
+        
+        <a href="./index.html" class="play-btn">ENTRER DANS LE RÊVE</a>
+    </div>
+
+    <script>
+        // Création d'étoiles aléatoires
+        function createStars() {
+            const stars = document.getElementById('stars');
+            const count = 200;
+            
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Taille aléatoire entre 1 et 3px
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Position aléatoire
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Animation delay aléatoire
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                stars.appendChild(star);
+            }
+        }
+        
+        window.addEventListener('load', createStars);
+    </script>
+</body>
+</html>
