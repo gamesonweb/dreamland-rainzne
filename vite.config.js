@@ -29,6 +29,16 @@ export default defineConfig({
       'Cross-Origin-Embedder-Policy': 'require-corp',
       'Access-Control-Allow-Origin': '*'
     },
-    open: '/home.html' 
+    open: '/home.html',
+    // Add MIME type handling
+    middlewareMode: false,
+    fs: {
+      strict: false
+    }
   },
+  
+  // Ensure proper TypeScript handling
+  define: {
+    'process.env': {}
+  }
 });
