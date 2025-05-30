@@ -3,6 +3,8 @@ Ce projet à pour but de participer au Games on Web 2025 : "Dreamland"
 
 Membre de l'équipe : Kishan Turpin , Tabi Côme , Dylan Malaussena
 
+lien : https://kazenoyama.github.io/GoW-2025-Astra-Lumina-Dream-Explorer/
+
 
 ## 📖 Présentation
 
