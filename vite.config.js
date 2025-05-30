@@ -6,20 +6,23 @@ export default defineConfig({
     : "/",
   
   build: {
-    // Assurez-vous que les assets sont correctement traités
     assetsInlineLimit: 0,
     sourcemap: true,
     
     rollupOptions: {
       input: {
-        main: 'home.html',
-        game: 'index.html'
+        main: './index.html',
+        home: './home.html'
       }
     }
   },
   
   optimizeDeps: {
     exclude: ['@babylonjs/havok']
+  },
+  
+  esbuild: {
+    target: 'es2020'
   },
   
   server: {
