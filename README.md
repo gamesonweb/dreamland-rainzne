@@ -8,7 +8,7 @@ lien : https://kazenoyama.github.io/GoW-2025-Astra-Lumina-Dream-Explorer/
 
 ## 📖 Présentation
 
-Astra Lumina Dream Explorer est un jeu d'exploration 3D où vous parcourez un monde onirique. Naviguez à travers des paysages surréalistes et découvrez le monde à mesure que vous l'explorez - les zones visitées passent du noir et blanc à la couleur, révélant progressivement un univers mystérieux.
+Astra Lumina Dream Explorer est un jeu d'exploration 3D inspiré par le jeu Haste, où vous parcourez un monde onirique. Naviguez à travers des paysages surréalistes et découvrez le monde à mesure que vous l'explorez - les zones visitées passent du noir et blanc à la couleur, révélant progressivement un univers mystérieux.
 
 Le jeu utilise la physique Havok pour des interactions réalistes et propose une expérience immersive avec un système d'éclairage dynamique et une bande sonore atmosphérique.
 
