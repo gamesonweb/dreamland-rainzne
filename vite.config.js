@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({  
-  base: "./",
+
+  base: "/dreamland-rainzne/",
   
   build: {
     assetsInlineLimit: 0,
