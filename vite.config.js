@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' 
-    ? "/GoW-2025-Astra-Lumina-Dream-Explorer/" 
+    ? "/dreamland-rainzne/"
     : "/",
   
   build: {
