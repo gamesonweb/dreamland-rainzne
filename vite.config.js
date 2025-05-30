@@ -1,9 +1,7 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-  base: process.env.NODE_ENV === 'production' 
-    ? "/dreamland-rainzne/"
-    : "/",
+export default defineConfig({  
+  base: "/dreamland-rainzne/",
   
   build: {
     assetsInlineLimit: 0,
