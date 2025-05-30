@@ -34,11 +34,14 @@ export default defineConfig({
     fs: {
       strict: false
     },
-    // Ajouter la configuration MIME explicite
+    // Configuration MIME plus spécifique et agressive
     configure: (server) => {
       server.middlewares.use((req, res, next) => {
-        if (req.url?.endsWith('.ts')) {
-          res.setHeader('Content-Type', 'application/javascript');
+        // Forcer le MIME type pour tous les fichiers TypeScript
+        if (req.url && req.url.includes('.ts')) {
+          res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+          res.setHeader('X-Content-Type-Options', 'nosniff');
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
         }
         next();
       });
