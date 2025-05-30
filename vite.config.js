@@ -30,14 +30,21 @@ export default defineConfig({
       'Access-Control-Allow-Origin': '*'
     },
     open: '/home.html',
-    // Add MIME type handling
     middlewareMode: false,
     fs: {
       strict: false
+    },
+    // Ajouter la configuration MIME explicite
+    configure: (server) => {
+      server.middlewares.use((req, res, next) => {
+        if (req.url?.endsWith('.ts')) {
+          res.setHeader('Content-Type', 'application/javascript');
+        }
+        next();
+      });
     }
   },
   
-  // Ensure proper TypeScript handling
   define: {
     'process.env': {}
   }
